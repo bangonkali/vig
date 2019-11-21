@@ -6,7 +6,7 @@ element.id = "tree";
 element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 document.body.appendChild(element);
 
-$("#tree").fancytree({
+jquery("#tree").fancytree({
   source: [
     { title: "Node 1", key: "1" },
     {

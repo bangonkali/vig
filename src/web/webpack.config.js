@@ -31,9 +31,6 @@ module.exports = {
         use: [{
           loader: 'expose-loader',
           options: 'jquery'
-        }, {
-          loader: 'expose-loader',
-          options: '$'
         }]
       },
       {
@@ -63,7 +60,6 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: 'jquery',
       jquery: 'jquery',
       fancytree: 'jquery.fancytree',
       _: 'lodash'
