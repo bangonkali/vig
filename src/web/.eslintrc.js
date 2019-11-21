@@ -11,6 +11,7 @@ module.exports = {
     'SharedArrayBuffer': 'readonly',
     'jquery': 'readonly',
     'fancytree': 'readonly',
+    '_': 'readonly',
   },
   'parserOptions': {
     'ecmaVersion': 2018,
