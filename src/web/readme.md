@@ -1,8 +1,8 @@
-# Vig
+# Vig for Web
 
 ## Introduction
 
-This tool will visualize graphs from mesh.
+This tool will visualize graphs using the web browser.
 
 ### References
 
