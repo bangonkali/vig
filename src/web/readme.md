@@ -8,6 +8,9 @@ Here are some references to technologies or theoreticial frameworks that are ref
 
 #### Tree
 
+- https://github.com/mar10/fancytree/wiki
+
+#### UI Grid
 - https://gridstackjs.com/
 
 #### Linting
