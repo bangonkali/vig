@@ -12,11 +12,26 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              fallback: require.resolve('file-loader'),
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: require.resolve('jquery'),
         use: [{
           loader: 'expose-loader',
           options: 'jquery'
-        },{
+        }, {
           loader: 'expose-loader',
           options: '$'
         }]

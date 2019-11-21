@@ -1,3 +1,6 @@
+// import 'jquery.fancytree/dist/skin-material/ui.fancytree.min.css'
+import 'jquery.fancytree/dist/skin-lion/ui.fancytree.css'
+
 const element = document.createElement('div');
 element.id = "tree";
 element.innerHTML = _.join(['Hello', 'webpack'], ' ');
