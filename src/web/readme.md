@@ -1,4 +1,6 @@
-## Visualisation Tool
+# Vig
+
+## Introduction
 
 This tool will visualize graphs from mesh.
 
