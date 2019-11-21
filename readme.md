@@ -1,6 +1,6 @@
 ### Vig
 
-Visualiastion tool for Graphs
+A tool for Visualising Graphs
 
 For now, only the [Vig for Web](https://github.com/bangonkali/vig/blob/master/src/web/readme.md) is being worked on.
 
