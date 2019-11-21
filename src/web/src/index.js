@@ -1,4 +1,3 @@
-/* global _, */
 import 'jquery.fancytree/dist/skin-lion/ui.fancytree.css';
 import {
   mxGraph, mxClient, mxUtils, mxRubberband,
@@ -9,20 +8,31 @@ element.id = 'tree';
 element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 document.body.appendChild(element);
 
-jquery('#tree').fancytree({
-  source: [
-    { title: 'Node 1', key: '1' },
-    {
-      title: 'Folder 2',
-      key: '2',
-      folder: true,
-      children: [
-        { title: 'Node 2.1', key: '3', myOwnAttr: 'abc' },
-        { title: 'Node 2.2', key: '4' },
-      ],
-    },
-  ],
-});
+jquery('#tree')
+  .fancytree({
+    source: [
+      {
+        title: 'Node 1',
+        key: '1',
+      },
+      {
+        title: 'Folder 2',
+        key: '2',
+        folder: true,
+        children: [
+          {
+            title: 'Node 2.1',
+            key: '3',
+            myOwnAttr: 'abc',
+          },
+          {
+            title: 'Node 2.2',
+            key: '4',
+          },
+        ],
+      },
+    ],
+  });
 
 console.log(fancytree.version);
 
@@ -42,7 +52,8 @@ function mxGraphMain(container) {
     const parent = graph.getDefaultParent();
 
     // Adds cells to the model in a single step
-    graph.getModel().beginUpdate();
+    graph.getModel()
+      .beginUpdate();
     try {
       const v1 = graph.insertVertex(parent, null,
         'Hello,', 20, 20, 80, 30);
@@ -51,7 +62,8 @@ function mxGraphMain(container) {
       const e1 = graph.insertEdge(parent, null, '', v1, v2);
     } finally {
       // Updates the display
-      graph.getModel().endUpdate();
+      graph.getModel()
+        .endUpdate();
     }
   }
 }
