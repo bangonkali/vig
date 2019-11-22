@@ -1,12 +1,19 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    },
   },
   module: {
     rules: [
@@ -19,6 +26,8 @@ module.exports = {
           options: {
             fix: true,
           },
+        }, {
+          loader: 'babel-loader',
         }],
       },
       {
@@ -35,7 +44,11 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'vue-style-loader',
+          'style-loader',
+          'css-loader',
+        ],
       },
       {
         test: require.resolve('jquery'),
@@ -76,6 +89,10 @@ module.exports = {
           + 'mxConstraintHandler,mxConnectionHandler,mxCellMarker,mxCellHighlight,mxDefaultPopupMenu,mxDefaultKeyHandler,mxCodec,mxGraphHierarchyModel,mxGraphAbstractHierarchyCell,'
           + 'mxGraphHierarchyEdge,mxGraphHierarchyNode,mxSwimlaneModel,mxEdgeSegmentHandler',
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
     ],
   },
   devServer: {
@@ -95,6 +112,9 @@ module.exports = {
       title: 'Graph Viewer',
       filename: path.resolve(__dirname, 'dist', 'index.html'),
       template: 'src/index.hbs',
+      inlineSource: '.(js|css)$',
     }),
+    new HtmlWebpackInlineSourcePlugin(),
+    new VueLoaderPlugin(),
   ],
 };
