@@ -21,5 +21,6 @@ module.exports = {
     'new-cap': 'warn',
     'no-unused-vars': 'warn',
     'no-new': 'warn',
+    'max-len': 'warn',
   },
 };
