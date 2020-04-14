@@ -18,9 +18,10 @@ module.exports = {
     'sourceType': 'module'
   },
   'rules': {
-    'new-cap': 'warn',
-    'no-unused-vars': 'warn',
-    'no-new': 'warn',
-    'max-len': 'warn',
+    'new-cap': 'off',
+    'no-unused-vars': 'off',
+    'no-new': 'off',
+    'max-len': 'off',
+    'no-console': 'off',
   },
 };

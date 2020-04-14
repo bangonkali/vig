@@ -32,10 +32,10 @@ function mxGraphMain(container) {
   } else {
     // Creates the graph inside the given container
     const graph = new mxGraph(container); // Enables rubberband selection
-    new mxRubberband(graph);
 
-    // Creates the default style for edges
-    style = [];
+    new mxRubberband(graph); // Creates the default style for edges
+
+    const style = [];
     style[mxConstants.STYLE_SHAPE] = mxConstants.SHAPE_CONNECTOR;
     style[mxConstants.STYLE_STROKECOLOR] = '#6482B9';
     style[mxConstants.STYLE_ALIGN] = mxConstants.ALIGN_CENTER;
@@ -44,7 +44,6 @@ function mxGraphMain(container) {
     style[mxConstants.STYLE_ENDARROW] = mxConstants.ARROW_CLASSIC;
     style[mxConstants.STYLE_FONTSIZE] = '10';
     graph.getStylesheet().putDefaultEdgeStyle(style);
-
     const parent = graph.getDefaultParent(); // Adds cells to the model in a single step
 
     graph.getModel().beginUpdate();
@@ -78,8 +77,8 @@ function mxGraphMain(container) {
       layout.execute(parent);
       evt.preventDefault();
     });
-    const style = graph.getStylesheet().getDefaultEdgeStyle();
-    style[mxConstants.STYLE_EDGE] = mxEdgeStyle.ElbowConnector;
+    const edgeStyle = graph.getStylesheet().getDefaultEdgeStyle();
+    edgeStyle[mxConstants.STYLE_EDGE] = mxEdgeStyle.ElbowConnector;
     document.body.appendChild(button);
   }
 }
